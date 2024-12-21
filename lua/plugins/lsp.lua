@@ -1,17 +1,29 @@
 return {
+  -- commented out because 'mason-registry' does not have a .register method
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = function(_, opts)
+  --     local sourcekit_lsp = {
+  --       name = "sourcekit-lsp",
+  --       type = "lsp",
+  --       install_script = function()
+  --         return true
+  --       end,
+  --       bin = "sourcekit-lsp",
+  --       homepage = "https://github.com/apple/sourcekit-lsp",
+  --     }
+  --     require('mason-registry').register(sourcekit_lsp);
+  --   end,
+  -- },
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require("lspconfig")
-      lspconfig.sourcekit.setup({ -- Setup swift LSP
-        capabiligies = {
-          workspace = {
-            didChangeWatchedFiles = {
-              dynamicRegistration = true,
-            },
-          },
+    opts = {
+      servers = {
+        sourcekit = {
+          cmd = { "sourcekit-lsp" },
+          filetypes = { "swift" },
         },
-      })
-    end,
+      },
+    },
   },
 }
