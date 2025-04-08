@@ -19,6 +19,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        -- Swift Stuff
         sourcekit = {
           cmd = { "sourcekit-lsp" },
           filetypes = { "swift" },
