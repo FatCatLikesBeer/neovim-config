@@ -24,6 +24,11 @@ return {
           cmd = { "sourcekit-lsp" },
           filetypes = { "swift" },
         },
+        intelephense = {
+          root_dir = function()
+            return vim.fn.getcwd()
+          end,
+        },
       },
     },
   },
