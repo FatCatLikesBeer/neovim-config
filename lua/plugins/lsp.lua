@@ -27,7 +27,9 @@ return {
         -- PHP stuff
         intelephense = {
           root_dir = function()
-            return vim.fn.getcwd()
+            local cwd = vim.fn.getcwd()
+            -- print(cwd)
+            return cwd
           end,
         },
         -- -- TypeScript && JavaScript stuff
