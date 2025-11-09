@@ -16,6 +16,7 @@ return {
   --   end,
   -- },
   {
+    -- Specify LSPs to install and configure outside of Mason
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
